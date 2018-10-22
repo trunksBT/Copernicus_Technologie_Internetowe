@@ -61,6 +61,14 @@ public class Produkt1 implements Serializable {
     public void setPromocja(int promocja) {
         this.promocja = promocja;
     }
+    
+    public String getProducent() {
+        return producent;
+    }
+
+    public void setProducent(String producent) {
+        this.producent = producent;
+    }
 
     public float cena_brutto(){
         float cena_brutto = cena * (1-(float)promocja/100);

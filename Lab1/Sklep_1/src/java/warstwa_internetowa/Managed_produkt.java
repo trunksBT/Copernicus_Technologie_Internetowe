@@ -26,6 +26,7 @@ public class Managed_produkt {
     private String nazwa;
     private String cena;
     private String promocja;
+    private String producent;
     private String cena_brutto;
     
     public Managed_produkt() {
@@ -70,19 +71,28 @@ public class Managed_produkt {
     public void setCena_brutto(String cena_brutto) {
         this.cena_brutto = cena_brutto;
     }
-    
+
+    public String getProducent() {
+        return producent;
+    }
+
+    public void setProducent(String producent) {
+        this.producent = producent;
+    }
+
     public String dodaj_produkt(){
-        String dane[] = {nazwa, cena, promocja};
+        String dane[] = {nazwa, cena, promocja, producent};
         fasada.utworz_produkt(dane);
         dane_produktu();
         return "rezultat1";
     }
-    
+
     public void dane_produktu(){
         String[] dane = fasada.dane_produktu();
         nazwa=dane[0];
         cena=dane[1];
         promocja=dane[2];
-        cena_brutto=dane[3];
+	producent=dane[3];
+        cena_brutto=dane[4];
     }
 }

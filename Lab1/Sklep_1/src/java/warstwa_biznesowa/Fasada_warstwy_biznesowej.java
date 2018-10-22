@@ -36,22 +36,25 @@ public class Fasada_warstwy_biznesowej {
         produkt.setNazwa(dane[0]);
         produkt.setCena(Float.parseFloat(dane[1]));
         produkt.setPromocja(Integer.parseInt(dane[2]));
+	produkt.setProducent(dane[3]);
     }
-    
+
     public String[] dane_produktu(){
         String nazwa = "brak produktu";
         String cena = "brak produktu";
         String promocja = "brak produktu";
+	String producent = "brak produktu";
         String cena_brutto = "brak produktu";
         
         if (produkt != null){
             nazwa = produkt.getNazwa();
             cena = "" + produkt.getCena();
             promocja = "" + produkt.getPromocja();
+	    producent = "" + produkt.getProducent();
             cena_brutto = "" + produkt.cena_brutto();
         }
         
-        String dane[] = {nazwa, cena, promocja, cena_brutto};
+        String dane[] = {nazwa, cena, promocja, producent, cena_brutto};
         return dane;
     }
 }

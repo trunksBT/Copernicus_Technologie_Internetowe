@@ -1,5 +1,3 @@
-<!--Korytko-->
-<!--Java Server Faces/JSF Page-->
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -19,11 +17,13 @@
                 <h:outputLabel value="Promocja produktu" for="promocja"/>
                 <h:outputText id="promocja" value="#{managed_produkt.promocja}"/>
                 
+                <h:outputLabel value="Promocja producenta produktu" for="producent"/>
+                <h:outputText id="producent" value="#{managed_produkt.producent}"/>
+                
                 <h:outputLabel value="Cena brutto produktu" for="brutto"/>
                 <h:outputText id="brutto" value="#{managed_produkt.cena_brutto}"/>
             </h:panelGrid>
             <h:commandButton id="powrot" value="Powrot" action="/faces/index"/>
         </h:form>
-        Hello from Facelets
     </h:body>
 </html>

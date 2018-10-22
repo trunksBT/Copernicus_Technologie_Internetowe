@@ -1,5 +1,3 @@
-<!--Korytko-->
-<!--Java Server Faces/JSF Page-->
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -36,6 +34,15 @@
                     value="#{managed_produkt.promocja}"
                     required="true"
                     requiredMessage="Blad: Podaj promocje.">
+                </h:inputText>
+                
+                <h:outputLabel value="Podaj producenta produktu" for="producent" />
+                <h:inputText
+                    id="producent"
+                    title="Podaj producenta"
+                    value="#{managed_produkt.producent}"
+                    required="true"
+                    requiredMessage="Blad: Podaj producenta produktu.">
                 </h:inputText>
             </h:panelGrid>        
             <h:commandLink action="#{managed_produkt.dodaj_produkt}" value="OK"/>
