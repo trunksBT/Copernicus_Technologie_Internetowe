@@ -45,9 +45,15 @@
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
-                                    <h:outputText value="#{bundle.Lista_produktow_cenabrutto}"/>
+                                    <h:outputText value="#{bundle.Lista_produktow_producent}"/>
                                 </f:facet>
                                 <h:outputText value="#{item.get(4)}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="#{bundle.Lista_produktow_cenabrutto}"/>
+                                </f:facet>
+                                <h:outputText value="#{item.get(5)}"/>
                             </h:column>
                         </h:dataTable>             
                     </h:panelGroup>
