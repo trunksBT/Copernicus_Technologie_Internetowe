@@ -111,9 +111,6 @@ public class Produkt1 implements Serializable {
 		if (!Objects.equals(this.producent, other.producent)) {
 			return false;
 		}
-//		if (!Objects.equals(this.id, other.id)) {
-//			return false;
-//		}
 		return true;
 	}
 

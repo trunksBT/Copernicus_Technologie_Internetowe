@@ -124,7 +124,7 @@ public class Managed_produkt {
             cena=dane[1];
             promocja=dane[2];
 	    producent=dane[3];
-            cena_brutto=dane[4];		
+            cena_brutto=dane[4];	
 	}
     }
 }

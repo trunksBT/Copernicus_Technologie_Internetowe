@@ -60,8 +60,9 @@ public class Fasada_warstwy_biznesowej {
 	    String nazwa = produkt.getNazwa();
 	    String cena = "" + produkt.getCena();
 	    String promocja = "" + produkt.getPromocja();
+	    String producent = "" + produkt.getProducent();
 	    String cena_brutto = "" + produkt.cena_brutto();
-	    String dane[] = {nazwa, cena, promocja, cena_brutto};
+	    String dane[] = {nazwa, cena, promocja, producent, cena_brutto};
 	    return dane;
 	}
 	return null;
@@ -75,6 +76,7 @@ public class Fasada_warstwy_biznesowej {
 	    wiersz.add(p.getNazwa());
 	    wiersz.add("" + p.getCena());
 	    wiersz.add("" + p.getPromocja());
+	    wiersz.add("" + p.getProducent());
 	    wiersz.add("" + p.cena_brutto());
 	    dane.add(wiersz);
 	}
