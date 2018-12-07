@@ -38,6 +38,7 @@
     background-color: #dddddd;
     padding: 5px;
     margin-left: 170px;
+    min-height: 50px;
 }
 
 .right_content {

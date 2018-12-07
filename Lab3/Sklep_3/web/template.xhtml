@@ -14,13 +14,25 @@
     </h:head>
 
     <h:body>
+        <div id="top">
+            <ui:insert name="top">Top</ui:insert>
+        </div>
         <div>
             <div id="left">
-                <h:link outcome="/faces/warstwa_internetowa_jsf/dodaj_produkt1" value="Dodaj produkt"/>
+                <h:link outcome="/faces/warstwa_internetowa_jsf/dodaj_produkt2"
+                        value="Dodaj produkt"/>
+                <h:link outcome="/faces/warstwa_internetowa_jsf/lista_produktow"
+                        value="Lista produktow"/>
             </div>
             <div id="content" class="left_content">
                 <ui:insert name="content">Content</ui:insert>
             </div>
+        </div>
+        <h:panelGroup id="messagePanel" layout="block">
+            <h:messages errorStyle="color: red" infoStyle="color: green" />
+        </h:panelGroup>
+        <div id="bottom">
+            <ui:insert name ="bottom">Bottom</ui:insert>
         </div>
     </h:body>
 </html>

@@ -10,7 +10,9 @@
             </ui:define>
             <ui:define name="content">
                 <h:form>
-                    <h:panelGrid columns="2">
+                    <h:outputText escape="false" value="Taki produkt juz istnieje"
+                                  rendered="#{managed_produkt.stan==0}"/>
+                    <h:panelGrid columns="2" rendered="#{managed_produkt.stan!=0}">
                     <h:outputLabel value="Nazwa produktu" for="nazwa"/>
                         <h:outputText id="nazwa" value="#{managed_produkt.nazwa}"/>
                 
