@@ -8,6 +8,7 @@
 
 package warstwa_internetowa;
 
+import java.util.Date;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
@@ -29,9 +30,10 @@ public class Managed_produkt {
     private float cena;
     private int promocja;
     private String producent;
-    private String cena_brutto;
+    private float cena_brutto;
     private DataModel items;
     private int stan = 1;
+    private Date data_produkcji;
     
     public Managed_produkt() {
     }
@@ -68,12 +70,20 @@ public class Managed_produkt {
         this.promocja = promocja;
     }
     
-    public String getCena_brutto() {
+    public float getCena_brutto() {
         return cena_brutto;
     }
 
-    public void setCena_brutto(String cena_brutto) {
+    public void setCena_brutto(float cena_brutto) {
         this.cena_brutto = cena_brutto;
+    }
+    
+    public Date getData_produkcji() {
+ 	return data_produkcji;
+    }
+
+    public void setData_produkcji(Date data_produkcji) {
+	this.data_produkcji = data_produkcji;
     }
 
     public DataModel utworz_DataModel(){
@@ -109,7 +119,7 @@ public class Managed_produkt {
 
     public String dodaj_produkt(){
         String dane[] = {nazwa, ""+cena, ""+promocja, producent};
-        fasada.utworz_produkt(dane);
+        fasada.utworz_produkt(dane, data_produkcji);
         dane_produktu();
         return "rezultat2";
     }
@@ -124,7 +134,8 @@ public class Managed_produkt {
             cena=Float.parseFloat(dane[1]);
             promocja=Integer.parseInt(dane[2]);
 	    producent=dane[3];
-            cena_brutto=dane[4];	
+            cena_brutto=Float.parseFloat(dane[4]);
+	    data_produkcji.setTime(Long.parseLong(dane[5]));
 	}
     }
 }

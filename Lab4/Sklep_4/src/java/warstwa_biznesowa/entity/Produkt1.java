@@ -9,11 +9,13 @@
 package warstwa_biznesowa.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -30,6 +32,16 @@ public class Produkt1 implements Serializable {
     private float cena;
     private int promocja;
     private String producent;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date data_produkcji;
+
+    public Date getData_produkcji() {
+	return data_produkcji;
+    }
+
+    public void setData_produkcji(Date data_produkcji) {
+	this.data_produkcji = data_produkcji;
+    }
 
     public Long getId() {
         return id;

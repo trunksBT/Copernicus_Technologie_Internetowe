@@ -9,6 +9,7 @@
 package warstwa_biznesowa;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.LinkedList;
 import javax.ejb.Stateless;
 import warstwa_biznesowa.entity.Produkt1;
@@ -35,7 +36,7 @@ public class Fasada_warstwy_biznesowej {
         this.produkty = produkty;
     }
     
-    public void utworz_produkt(String dane[]){
+    public void utworz_produkt(String dane[], Date data){
         Produkt1 produkt = new Produkt1();
 	klucz++;
 	produkt.setId(new Long(klucz));
@@ -43,6 +44,7 @@ public class Fasada_warstwy_biznesowej {
         produkt.setCena(Float.parseFloat(dane[1]));
         produkt.setPromocja(Integer.parseInt(dane[2]));
 	produkt.setProducent(dane[3]);
+	produkt.setData_produkcji(data);
 	dodaj_produkt(produkt);
     }
 
@@ -63,7 +65,8 @@ public class Fasada_warstwy_biznesowej {
 	    String promocja = "" + produkt.getPromocja();
 	    String producent = "" + produkt.getProducent();
 	    String cena_brutto = "" + produkt.cena_brutto();
-	    String dane[] = {nazwa, cena, promocja, producent, cena_brutto};
+	    String data = "" + produkt.getData_produkcji().getTime();
+	    String dane[] = {nazwa, cena, promocja, producent, cena_brutto, data};
 	    return dane;
 	}
 	return null;
@@ -79,6 +82,7 @@ public class Fasada_warstwy_biznesowej {
 	    wiersz.add("" + p.getPromocja());
 	    wiersz.add("" + p.getProducent());
 	    wiersz.add("" + p.cena_brutto());
+	    wiersz.add(p.getData_produkcji().toString());
 	    dane.add(wiersz);
 	}
 	return dane;
