@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-// KORYTKO
 // Persistence Entity Class
 
 package warstwa_biznesowa.entity;
