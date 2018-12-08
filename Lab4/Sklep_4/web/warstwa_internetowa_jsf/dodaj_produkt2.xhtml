@@ -2,11 +2,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:body>
         <ui:composition template="./../template.xhtml">
             <ui:define name="title">
-                Dodaj produkt
+                <h:outputText
+                    value="#{bundle['dodaj_produkt2.tytul']}">
+                </h:outputText>
             </ui:define>
             <ui:define name="content">
             <h:form>
@@ -45,6 +48,16 @@
                     value="#{managed_produkt.producent}"
                     required="true"
                     requiredMessage="#{bundle['dodaj_produkt2.inputText_requiredMessage_producent']}">
+                </h:inputText>
+                
+                <h:outputLabel value="#{bundle['dodaj_produkt2.outputLabel_data']}" for="data"/>
+                <h:inputText
+                    id="data"
+                    title="#{bundle['dodaj_produkt2.inputText_title_data']}"
+                    value="#{managed_produkt.data_produkcji}"
+                    required="true"
+                    requiredMessage="#{bundle['dodaj_produkt2.inputText_requiredMessage_data']}">
+                        <f:convertDateTime pattern="dd-MM-yyyy" />
                 </h:inputText>
             </h:panelGrid>        
             <h:commandLink action="#{managed_produkt.dodaj_produkt}" value="OK"/>
