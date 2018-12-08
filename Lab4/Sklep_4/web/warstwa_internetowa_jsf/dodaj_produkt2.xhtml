@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:body>
+        <ui:composition template="./../template.xhtml">
+            <ui:define name="title">
+                Dodaj produkt
+            </ui:define>
+            <ui:define name="content">
+            <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="#{bundle.Dodaj_produkt2_outputLabel_nazwa}" for="nazwa" />
+                <h:inputText
+                    id="nazwa"
+                    title="#{bundle.Dodaj_produkt2_inputText_title_nazwa}"
+                    value="#{managed_produkt.nazwa}"
+                    required="true"
+                    requiredMessage="#{bundle.Dodaj_produkt2_inputText_requiredMessage_nazwa}">
+                </h:inputText>
+                
+                <h:outputLabel value="#{bundle.Dodaj_produkt2_outputLabel_cena}" for="cena" />
+                <h:inputText
+                    id="cena"
+                    title="#{bundle.Dodaj_produkt2_inputText_title_cena}"
+                    value="#{managed_produkt.cena}"
+                    required="true"
+                    requiredMessage="#{bundle.Dodaj_produkt2_inputText_requiredMessage_cena}">
+                </h:inputText>
+                
+                <h:outputLabel value="#{bundle.Dodaj_produkt2_outputLabel_promocja}" for="promocja" />
+                <h:inputText
+                    id="promocja"
+                    title="#{bundle.Dodaj_produkt2_inputText_title_promocja}"
+                    value="#{managed_produkt.promocja}"
+                    required="true"
+                    requiredMessage="#{bundle.Dodaj_produkt2_inputText_requiredMessage_promocja}">
+                </h:inputText>
+                
+                <h:outputLabel value="#{bundle.Dodaj_produkt2_outputLabel_producent}" for="producent" />
+                <h:inputText
+                    id="producent"
+                    title="#{bundle.Dodaj_produkt2_inputText_title_producent}"
+                    value="#{managed_produkt.producent}"
+                    required="true"
+                    requiredMessage="#{bundle.Dodaj_produkt2_inputText_requiredMessage_producent}">
+                </h:inputText>
+            </h:panelGrid>        
+            <h:commandLink action="#{managed_produkt.dodaj_produkt}" value="OK"/>
+            </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
