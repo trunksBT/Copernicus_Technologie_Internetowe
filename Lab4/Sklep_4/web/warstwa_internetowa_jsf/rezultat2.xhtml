@@ -10,26 +10,26 @@
             </ui:define>
             <ui:define name="content">
                 <h:form>
-                    <h:outputText escape="false" value="#{bundle.Rezultat2_outputText_produkt_istnieje}"
+                    <h:outputText escape="false" value="#{bundle['rezultat2.outputText_produkt_istnieje']}"
                                   rendered="#{managed_produkt.stan==0}"/>
                     <h:panelGrid></h:panelGrid>
                     <h:panelGrid columns="2" rendered="#{managed_produkt.stan!=0}">
-                        <h:outputLabel value="#{bundle.Dodaj_produkt2_outputLabel_nazwa}" for="nazwa"/>
+                        <h:outputLabel value="#{bundle['rezultat2.outputLabel_nazwa']}" for="nazwa"/>
                         <h:outputText id="nazwa" value="#{managed_produkt.nazwa}"/>
                 
-                        <h:outputLabel value="#{bundle.Rezultat2_outputLabel_cena}" for="cena"/>
+                        <h:outputLabel value="#{bundle['rezultat2.outputLabel_cena']}" for="cena"/>
                         <h:outputText id="cena" value="#{managed_produkt.cena}"/>
 
-                        <h:outputLabel value="#{bundle.Rezultat2_outputLabel_promocja}" for="promocja"/>
+                        <h:outputLabel value="#{bundle['rezultat2.outputLabel_promocja']}" for="promocja"/>
                         <h:outputText id="promocja" value="#{managed_produkt.promocja}"/>
                 
-                        <h:outputLabel value="#{bundle.Rezultat2_outputLabel_producent}" for="producent"/>
+                        <h:outputLabel value="#{bundle['rezultat2.outputLabel_producent']}" for="producent"/>
                         <h:outputText id="producent" value="#{managed_produkt.producent}"/>
                 
-                        <h:outputLabel value="#{bundle.Rezultat2_outputLabel_brutto}" for="brutto"/>
+                        <h:outputLabel value="#{bundle['rezultat2.outputLabel_brutto']}" for="brutto"/>
                         <h:outputText id="brutto" value="#{managed_produkt.cena_brutto}"/>
                     </h:panelGrid>
-            <h:commandButton id="powrot" value="#{bundle.Rezultat2_commandButton_powrot}" action="/faces/index1"/>
+            <h:commandButton id="powrot" value="#{bundle['rezultat2.commandButton_powrot']}" action="/faces/index1"/>
             </h:form>
             </ui:define>
             </ui:composition>

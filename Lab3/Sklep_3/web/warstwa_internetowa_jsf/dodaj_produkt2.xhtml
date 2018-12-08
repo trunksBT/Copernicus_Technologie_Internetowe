@@ -11,40 +11,40 @@
             <ui:define name="content">
             <h:form>
             <h:panelGrid columns="2">
-                <h:outputLabel value="#{bundle.Dodaj_produkt2_outputLabel_nazwa}" for="nazwa" />
+                <h:outputLabel value="#{bundle['dodaj_produkt2.nazwa']}" for="nazwa" />
                 <h:inputText
                     id="nazwa"
-                    title="#{bundle.Dodaj_produkt2_inputText_title_nazwa}"
+                    title="#{bundle['dodaj_produkt2.title_nazwa']}"
                     value="#{managed_produkt.nazwa}"
                     required="true"
-                    requiredMessage="#{bundle.Dodaj_produkt2_inputText_requiredMessage_nazwa}">
+                    requiredMessage="#{bundle['dodaj_produkt2.requiredMessage_nazwa']}">
                 </h:inputText>
                 
-                <h:outputLabel value="#{bundle.Dodaj_produkt2_outputLabel_cena}" for="cena" />
+                <h:outputLabel value="#{bundle['dodaj_produkt2.cena']}" for="cena" />
                 <h:inputText
                     id="cena"
-                    title="#{bundle.Dodaj_produkt2_inputText_title_cena}"
+                    title="#{bundle['dodaj_produkt2.title_cena']}"
                     value="#{managed_produkt.cena}"
                     required="true"
-                    requiredMessage="#{bundle.Dodaj_produkt2_inputText_requiredMessage_cena}">
+                    requiredMessage="#{bundle['dodaj_produkt2.requiredMessage_cena']}">
                 </h:inputText>
                 
-                <h:outputLabel value="#{bundle.Dodaj_produkt2_outputLabel_promocja}" for="promocja" />
+                <h:outputLabel value="#{bundle['dodaj_produkt2.promocja']}" for="promocja" />
                 <h:inputText
                     id="promocja"
-                    title="#{bundle.Dodaj_produkt2_inputText_title_promocja}"
+                    title="#{bundle['dodaj_produkt2.title_promocja']}"
                     value="#{managed_produkt.promocja}"
                     required="true"
-                    requiredMessage="#{bundle.Dodaj_produkt2_inputText_requiredMessage_promocja}">
+                    requiredMessage="#{bundle['dodaj_produkt2.requiredMessage_promocja']}">
                 </h:inputText>
                 
-                <h:outputLabel value="#{bundle.Dodaj_produkt2_outputLabel_producent}" for="producent" />
+                <h:outputLabel value="#{bundle['dodaj_produkt2.producent']}" for="producent" />
                 <h:inputText
                     id="producent"
-                    title="#{bundle.Dodaj_produkt2_inputText_title_producent}"
+                    title="#{bundle['dodaj_produkt2.title_producent']}"
                     value="#{managed_produkt.producent}"
                     required="true"
-                    requiredMessage="#{bundle.Dodaj_produkt2_inputText_requiredMessage_producent}">
+                    requiredMessage="#{bundle['dodaj_produkt2.requiredMessage_producent']}">
                 </h:inputText>
             </h:panelGrid>        
             <h:commandLink action="#{managed_produkt.dodaj_produkt}" value="OK"/>
