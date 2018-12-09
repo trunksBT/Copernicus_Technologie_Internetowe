@@ -28,7 +28,7 @@ public class Managed_produkt {
     private Fasada_warstwy_biznesowej fasada;
     private String nazwa;
     private float cena;
-    private int promocja;
+    private float promocja;
     private String producent;
     private float cena_brutto;
     private DataModel items;
@@ -51,10 +51,6 @@ public class Managed_produkt {
 	this.number_convert.setPattern("######.##zł");
 	return number_convert;
     }
-    
-    public void setNumber_convert(NumberConverter Number_convert){
-	this.number_convert = Number_convert;
-    }
 
     public String getNazwa() {
         return nazwa;
@@ -72,11 +68,11 @@ public class Managed_produkt {
         this.cena = cena;
     }
     
-    public int getPromocja() {
+    public float getPromocja() {
         return promocja;
     }
 
-    public void setPromocja(int promocja) {
+    public void setPromocja(float promocja) {
         this.promocja = promocja;
     }
     
@@ -142,7 +138,7 @@ public class Managed_produkt {
 	} else {
             nazwa=dane[0];
             cena=Float.parseFloat(dane[1]);
-            promocja=Integer.parseInt(dane[2]);
+            promocja=Float.parseFloat(dane[2]);
 	    producent=dane[3];
             data_produkcji.setTime(Long.parseLong(dane[4]));
 	    cena_brutto=Float.parseFloat(dane[5]);

@@ -41,7 +41,7 @@ public class Fasada_warstwy_biznesowej {
 	produkt.setId(new Long(klucz));
         produkt.setNazwa(dane[0]);
         produkt.setCena(Float.parseFloat(dane[1]));
-        produkt.setPromocja(Integer.parseInt(dane[2]));
+        produkt.setPromocja(Float.parseFloat(dane[2]));
 	produkt.setProducent(dane[3]);
 	produkt.setData_produkcji(data);
 	dodaj_produkt(produkt);

@@ -30,7 +30,7 @@
                     value="#{managed_produkt.cena}"
                     required="true"
                     requiredMessage="#{bundle['dodaj_produkt2.inputText_requiredMessage_cena']}">
-                    <f:convertNumber binding="#{managed_produkt.number_convert}" locale="en_US"/>
+                    <f:convertNumber binding="#{managed_produkt.number_convert}"/>
                 </h:inputText>
                 
                 <h:outputLabel value="#{bundle['dodaj_produkt2.outputLabel_promocja']}" for="promocja" />
@@ -40,7 +40,7 @@
                     value="#{managed_produkt.promocja}"
                     required="true"
                     requiredMessage="#{bundle['dodaj_produkt2.inputText_requiredMessage_promocja']}">
-                        <f:converter converterId="javax.faces.Integer"/>
+                        <f:converter converterId="javax.faces.Float"/>
                 </h:inputText>
                 
                 <h:outputLabel value="#{bundle['dodaj_produkt2.outputLabel_producent']}" for="producent" />

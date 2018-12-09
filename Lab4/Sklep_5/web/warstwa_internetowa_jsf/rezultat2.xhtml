@@ -28,7 +28,7 @@
 
                         <h:outputLabel value="#{bundle['rezultat2.outputLabel_promocja']}" for="promocja"/>
                         <h:outputText id="promocja" value="#{managed_produkt.promocja}">
-                            <f:convertNumber currencySymbol="%" type="currency"/>
+                            <f:convertNumber type="currency" currencySymbol="%"/>
                         </h:outputText>
                 
                         <h:outputLabel value="#{bundle['rezultat2.outputLabel_producent']}" for="producent"/>
@@ -37,7 +37,6 @@
                         <h:outputLabel value="#{bundle['rezultat2.outputLabel_data']}" for="data"/>
                         <h:outputText id="data" value="#{managed_produkt.data_produkcji}">
                             <f:convertDateTime dateStyle="full"
-                                               locale="en_US"
                                                timeStyle="long"
                                                type="both"/>
                         </h:outputText>

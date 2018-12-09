@@ -29,7 +29,7 @@ public class Produkt1 implements Serializable {
     private Long id;
     private String nazwa;
     private float cena;
-    private int promocja;
+    private float promocja;
     private String producent;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date data_produkcji;
@@ -66,11 +66,11 @@ public class Produkt1 implements Serializable {
         this.cena = cena;
     }
 
-    public int getPromocja() {
+    public float getPromocja() {
         return promocja;
     }
 
-    public void setPromocja(int promocja) {
+    public void setPromocja(float promocja) {
         this.promocja = promocja;
     }
     
@@ -83,7 +83,7 @@ public class Produkt1 implements Serializable {
     }
 
     public float cena_brutto(){
-        float cena_brutto = cena * (1-(float)promocja/100);
+        float cena_brutto = cena * (1-promocja/100);
         return cena_brutto;
     }
 
@@ -93,7 +93,7 @@ public class Produkt1 implements Serializable {
 		hash = 37 * hash + Objects.hashCode(this.id);
 		hash = 37 * hash + Objects.hashCode(this.nazwa);
 		hash = 37 * hash + Float.floatToIntBits(this.cena);
-		hash = 37 * hash + this.promocja;
+		hash = 37 * hash + Float.floatToIntBits(this.promocja);
 		hash = 37 * hash + Objects.hashCode(this.producent);
 		return hash;
 	}
@@ -129,5 +129,4 @@ public class Produkt1 implements Serializable {
     public String toString() {
         return "warstwa_biznesowa.entity.Produkt1[ id=" + id + " ]";
     }
-    
 }
