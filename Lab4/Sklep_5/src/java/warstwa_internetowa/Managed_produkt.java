@@ -11,6 +11,7 @@ import java.util.Date;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.convert.NumberConverter;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import warstwa_biznesowa.Fasada_warstwy_biznesowej;
@@ -33,6 +34,7 @@ public class Managed_produkt {
     private DataModel items;
     private int stan = 1;
     private Date data_produkcji;
+    private NumberConverter number_convert=new NumberConverter();
     
     public Managed_produkt() {
     }
@@ -43,6 +45,15 @@ public class Managed_produkt {
 
     public void setFasada(Fasada_warstwy_biznesowej fasada){
         this.fasada = fasada;
+    }
+    
+    public NumberConverter getNumber_convert(){
+	this.number_convert.setPattern("######.##zł");
+	return number_convert;
+    }
+    
+    public void setNumber_convert(NumberConverter Number_convert){
+	this.number_convert = Number_convert;
     }
 
     public String getNazwa() {
