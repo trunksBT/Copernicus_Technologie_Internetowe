@@ -17,6 +17,8 @@ import javax.faces.event.ActionEvent;
 import javax.faces.event.ActionListener;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
+import javax.faces.model.SelectItem;
+import pomoc.JSFPomoc;
 import pomoc.Zmiana_danych;
 import warstwa_biznesowa.Fasada_warstwy_biznesowej;
 
@@ -64,6 +66,10 @@ public class Managed_produkt implements ActionListener {
     public NumberConverter getNumber_convert(){
 	this.number_convert.setPattern("######.##zł");
 	return number_convert;
+    }
+
+    public SelectItem[] getItemsAvailableSelectOne() {
+	return JSFPomoc.getSelectItems(fasada.findAll(), true);
     }
 
     public int getMinPromocja()

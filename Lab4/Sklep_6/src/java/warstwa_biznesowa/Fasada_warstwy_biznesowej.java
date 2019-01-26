@@ -35,6 +35,15 @@ public class Fasada_warstwy_biznesowej {
         this.produkty = produkty;
     }
     
+    public ArrayList<Integer> findAll() {
+	 ArrayList<Integer> pom = new ArrayList();
+	 pom.add(0);
+	 pom.add(10);
+	 pom.add(20);
+	 pom.add(50);
+	 return pom;
+    }
+
     public void utworz_produkt(String dane[], Date data){
         Produkt1 produkt = new Produkt1();
 	klucz++;
