@@ -142,7 +142,7 @@ public class Managed_produkt implements ActionListener {
         fasada.utworz_produkt(dane, data_produkcji);
     }
 
-    public String dane_produktu(){
+    public void dane_produktu(){
 	stan = 1;
         String[] dane = fasada.dane_produktu();
 	if (dane == null){
@@ -155,11 +155,11 @@ public class Managed_produkt implements ActionListener {
             data_produkcji.setTime(Long.parseLong(dane[4]));
 	    cena_brutto=Float.parseFloat(dane[5]);
 	}
-	return "rezultat2";
     }
     
     @Override
     public void processAction(ActionEvent event) throws AbortProcessingException{
 	dodaj_produkt();
+	dane_produktu();
     }
 }
