@@ -22,6 +22,7 @@
                     required="true"
                     requiredMessage="#{bundle['dodaj_produkt2.inputText_requiredMessage_nazwa']}">
                         <f:valueChangeListener binding="#{managed_produkt.zmiana1}"/>
+                        <f:ajax event="blur" execute="nazwa" render="messagePanel"/>
                 </h:inputText>
                 
                 <h:outputLabel value="#{bundle['dodaj_produkt2.outputLabel_cena']}" for="cena" />
