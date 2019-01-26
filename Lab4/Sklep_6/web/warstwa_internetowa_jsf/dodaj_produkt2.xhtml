@@ -21,7 +21,7 @@
                     value="#{managed_produkt.nazwa}"
                     required="true"
                     requiredMessage="#{bundle['dodaj_produkt2.inputText_requiredMessage_nazwa']}">
-                        <f:valueChangeListener type="pomoc.Zmiana_danych"/>
+                        <f:valueChangeListener binding="#{managed_produkt.zmiana1}"/>
                 </h:inputText>
                 
                 <h:outputLabel value="#{bundle['dodaj_produkt2.outputLabel_cena']}" for="cena" />
@@ -32,6 +32,7 @@
                     required="true"
                     requiredMessage="#{bundle['dodaj_produkt2.inputText_requiredMessage_cena']}">
                     <f:convertNumber binding="#{managed_produkt.number_convert}"/>
+                        <f:valueChangeListener binding="#{managed_produkt.zmiana2}"/>
                 </h:inputText>
                 
                 <h:outputLabel value="#{bundle['dodaj_produkt2.outputLabel_promocja']}" for="promocja" />
@@ -51,6 +52,7 @@
                     value="#{managed_produkt.producent}"
                     required="true"
                     requiredMessage="#{bundle['dodaj_produkt2.inputText_requiredMessage_producent']}">
+                          <f:valueChangeListener binding="#{managed_produkt.zmiana3}"/>
                 </h:inputText>
                 
                 <h:outputLabel value="#{bundle['dodaj_produkt2.outputLabel_data']}" for="data"/>

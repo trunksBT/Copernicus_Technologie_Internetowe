@@ -14,6 +14,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.faces.convert.NumberConverter;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
+import pomoc.Zmiana_danych;
 import warstwa_biznesowa.Fasada_warstwy_biznesowej;
 
 /**
@@ -35,10 +36,20 @@ public class Managed_produkt {
     private int stan = 1;
     private Date data_produkcji;
     private NumberConverter number_convert=new NumberConverter();
+    private Zmiana_danych zmiana1 = new Zmiana_danych("nazwa");
+    private Zmiana_danych zmiana2 = new Zmiana_danych("cena");
+    private Zmiana_danych zmiana3 = new Zmiana_danych("producent");
     
     public Managed_produkt() {
     }
-    
+
+    public Zmiana_danych getZmiana1()            {    return zmiana1;    }
+    public void setZmiana1(Zmiana_danych zmiana) {    this.zmiana1 = zmiana;    }
+    public Zmiana_danych getZmiana2()            {    return zmiana2;    }
+    public void setZmiana2(Zmiana_danych zmiana2){    this.zmiana2 = zmiana2;   }
+    public Zmiana_danych getZmiana3()            {    return zmiana3;    }
+    public void setZmiana3(Zmiana_danych zmiana3){    this.zmiana3 = zmiana3;   }
+
     public Fasada_warstwy_biznesowej getFasada(){
         return fasada;
     }
