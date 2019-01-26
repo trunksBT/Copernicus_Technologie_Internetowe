@@ -12,6 +12,9 @@ import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.convert.NumberConverter;
+import javax.faces.event.AbortProcessingException;
+import javax.faces.event.ActionEvent;
+import javax.faces.event.ActionListener;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import pomoc.Zmiana_danych;
@@ -23,7 +26,7 @@ import warstwa_biznesowa.Fasada_warstwy_biznesowej;
  */
 @Named(value = "managed_produkt")
 @RequestScoped
-public class Managed_produkt {
+public class Managed_produkt implements ActionListener {
    
     @EJB
     private Fasada_warstwy_biznesowej fasada;
@@ -134,14 +137,12 @@ public class Managed_produkt {
         this.producent = producent;
     }
 
-    public String dodaj_produkt(){
+    public void dodaj_produkt(){
         String dane[] = {nazwa, ""+cena, ""+promocja, producent};
         fasada.utworz_produkt(dane, data_produkcji);
-        dane_produktu();
-        return "rezultat2";
     }
 
-    public void dane_produktu(){
+    public String dane_produktu(){
 	stan = 1;
         String[] dane = fasada.dane_produktu();
 	if (dane == null){
@@ -154,5 +155,11 @@ public class Managed_produkt {
             data_produkcji.setTime(Long.parseLong(dane[4]));
 	    cena_brutto=Float.parseFloat(dane[5]);
 	}
+	return "rezultat2";
+    }
+    
+    @Override
+    public void processAction(ActionEvent event) throws AbortProcessingException{
+	dodaj_produkt();
     }
 }
