@@ -31,8 +31,10 @@
                     value="#{managed_produkt.cena}"
                     required="true"
                     requiredMessage="#{bundle['dodaj_produkt2.inputText_requiredMessage_cena']}">
-                    <f:convertNumber binding="#{managed_produkt.number_convert}"/>
+                    <f:convertNumber binding="#{managed_produkt.number_convert}">
                         <f:valueChangeListener binding="#{managed_produkt.zmiana2}"/>
+                    </f:convertNumber>
+                    <f:validateLongRange minimum="#{managed_produkt.minCena}" maximum="#{managed_produkt.maxCena}"/>
                 </h:inputText>
                 
                 <h:outputLabel value="#{bundle['dodaj_produkt2.outputLabel_promocja']}" for="promocja" />
@@ -43,6 +45,7 @@
                     required="true"
                     requiredMessage="#{bundle['dodaj_produkt2.inputText_requiredMessage_promocja']}">
                         <f:converter converterId="javax.faces.Float"/>
+                        <f:validateLongRange minimum="#{managed_produkt.minPromocja}" maximum="#{managed_produkt.maxPromocja}"/>
                 </h:inputText>
                 
                 <h:outputLabel value="#{bundle['dodaj_produkt2.outputLabel_producent']}" for="producent" />

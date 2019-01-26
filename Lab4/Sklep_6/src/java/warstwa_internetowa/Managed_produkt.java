@@ -66,6 +66,26 @@ public class Managed_produkt implements ActionListener {
 	return number_convert;
     }
 
+    public int getMinPromocja()
+    {
+	return 0;
+    }
+
+    public int getMaxPromocja()
+    {
+	return 100;
+    }
+    
+    public int getMinCena()
+    {
+	return 1;
+    }
+
+    public int getMaxCena()
+    {
+	return 1000000;
+    }
+    
     public String getNazwa() {
         return nazwa;
     }
