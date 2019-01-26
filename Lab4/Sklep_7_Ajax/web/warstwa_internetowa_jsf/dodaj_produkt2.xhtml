@@ -47,7 +47,7 @@
                     required="true"
                     requiredMessage="#{bundle['dodaj_produkt2.inputText_requiredMessage_promocja']}">
                         <f:selectItems value="#{managed_produkt.itemsAvailableSelectOne}"/>
-                        <f:ajax event="blur" execute="promocja" render="messagePanel"/>
+                        <f:ajax execute="cena promocja" render="brutto"/>
                 </h:selectOneMenu>
                 
                 <h:outputLabel value="#{bundle['dodaj_produkt2.outputLabel_producent']}" for="producent" />
@@ -70,11 +70,8 @@
                         <f:convertDateTime pattern="dd-MM-yyyy" />
                         <f:ajax event="blur" execute="data" render="messagePanel"/>
                 </h:inputText>
-                
-                <h:commandButton value="#{bundle['dodaj_produkt2.commandButton_cenaBrutto']}">
-                    <f:ajax execute="cena promocja" render="brutto"/> 
-                </h:commandButton>
 
+                <h:outputLabel for="brutto" value="#{bundle['dodaj_produkt2.outputLabel_cenaBrutto']}"/>
                 <h:outputText id="brutto" value="#{managed_produkt.cena_brutto_}">
                     <f:convertNumber currencySymbol="z&#322;" type="currency"/>
                 </h:outputText>
