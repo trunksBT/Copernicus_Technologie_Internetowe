@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:body>
+        <ui:composition template="./../template.xhtml">
+            <ui:define name="title">
+                <h:outputText
+                    value="#{bundle['dodaj_produkt2.tytul']}">
+                </h:outputText>
+            </ui:define>
+            <ui:define name="content">
+            <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="#{bundle['dodaj_produkt2.outputLabel_nazwa']}" for="nazwa" />
+                <h:inputText
+                    id="nazwa"
+                    title="#{bundle['dodaj_produkt2.inputText_title_nazwa']}"
+                    value="#{managed_produkt.nazwa}"
+                    required="true"
+                    requiredMessage="#{bundle['dodaj_produkt2.inputText_requiredMessage_nazwa']}">
+                        <f:valueChangeListener type="pomoc.Zmiana_danych"/>
+                </h:inputText>
+                
+                <h:outputLabel value="#{bundle['dodaj_produkt2.outputLabel_cena']}" for="cena" />
+                <h:inputText
+                    id="cena"
+                    title="#{bundle['dodaj_produkt2.inputText_title_cena']}"
+                    value="#{managed_produkt.cena}"
+                    required="true"
+                    requiredMessage="#{bundle['dodaj_produkt2.inputText_requiredMessage_cena']}">
+                    <f:convertNumber binding="#{managed_produkt.number_convert}"/>
+                </h:inputText>
+                
+                <h:outputLabel value="#{bundle['dodaj_produkt2.outputLabel_promocja']}" for="promocja" />
+                <h:inputText
+                    id="promocja"
+                    title="#{bundle['dodaj_produkt2.inputText_title_promocja']}"
+                    value="#{managed_produkt.promocja}"
+                    required="true"
+                    requiredMessage="#{bundle['dodaj_produkt2.inputText_requiredMessage_promocja']}">
+                        <f:converter converterId="javax.faces.Float"/>
+                </h:inputText>
+                
+                <h:outputLabel value="#{bundle['dodaj_produkt2.outputLabel_producent']}" for="producent" />
+                <h:inputText
+                    id="producent"
+                    title="#{bundle['dodaj_produkt2.inputText_title_producent']}"
+                    value="#{managed_produkt.producent}"
+                    required="true"
+                    requiredMessage="#{bundle['dodaj_produkt2.inputText_requiredMessage_producent']}">
+                </h:inputText>
+                
+                <h:outputLabel value="#{bundle['dodaj_produkt2.outputLabel_data']}" for="data"/>
+                <h:inputText
+                    id="data"
+                    title="#{bundle['dodaj_produkt2.inputText_title_data']}"
+                    value="#{managed_produkt.data_produkcji}"
+                    required="true"
+                    requiredMessage="#{bundle['dodaj_produkt2.inputText_requiredMessage_data']}">
+                        <f:convertDateTime pattern="dd-MM-yyyy" />
+                </h:inputText>
+            </h:panelGrid>        
+            <h:commandLink action="#{managed_produkt.dodaj_produkt}" value="OK"/>
+            </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
